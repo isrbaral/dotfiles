@@ -68,8 +68,8 @@ RefreshEnv
 winget install -e -h --id Nushell.Nushell
 # saves an initialization script to ~/.oh-my-posh.nu that will be used in Nushell config file
 oh-my-posh init nu --config "$env:USERPROFILE\dotfiles\config\prompt\.oh-my-posh.omp.json"
-Remove-Item -Path "$env:USERPROFILE\AppData\Roaming\nushell\config.nu" -Force
-New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Roaming\nushell\config.nu" -Target "$env:USERPROFILE\dotfiles\config\nu\config.nu"
+# Remove-Item -Path "$env:USERPROFILE\AppData\Roaming\nushell\config.nu" -Force
+# New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Roaming\nushell\config.nu" -Target "$env:USERPROFILE\dotfiles\config\nu\config.nu"
 # config auto complete dotnet / nuke / ...
 
 # ---------------------------------------------- #
