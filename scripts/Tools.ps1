@@ -48,7 +48,7 @@ choco install -y mremoteng
 # ---------------------------------------------- #
 winget install -e -h --id Microsoft.PowerShell
 # Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-$currentPath = $env:OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 
+$currentPath = "$env:OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1"
 if(Test-Path $currentPath) {Remove-Item -Path $currentPath -Force}
 $currentPath = $null
 New-Item -ItemType SymbolicLink -Path "$env:OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Target "$env:USERPROFILE\dotfiles\config\powerShell\Microsoft.PowerShell_profile.ps1"
