@@ -60,7 +60,7 @@ RefreshEnv
 # ---------------------------------------------- #
 pwsh -Command { Install-Module posh-git -Scope CurrentUser -Force}
 winget install -e -h --id JanDeDobbeleer.OhMyPosh
-
+RefreshEnv
 
 # ---------------------------------------------- #
 # NuShell  ---------------------------------- #
