@@ -1,5 +1,5 @@
 [user]
-	name = Alexandre Nedelec
+	name = Israel Baral
 [fetch]
 	prune = true
 [pull]
@@ -32,4 +32,4 @@
 [init]
 	defaultBranch = main
 [safe]
-	directory = C:/Users/alexandre.nedelec/dotfiles
+	directory = C:/Users/izieh/dotfiles

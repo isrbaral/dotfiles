@@ -4,7 +4,7 @@ Disable-UAC
 $Boxstarter.AutoLogin=$false
 # Install git and clone repository containing scripts and config files
 # TODO: see how to improve install that by using chezmoi (choco install -y chezmoi)
-choco install -y git --params "/GitOnlyOnPath /NoShellIntegration /WindowsTerminal"
+choco install -y git --params "/GitOnlyOnPath /WindowsTerminal"
 RefreshEnv
 git clone https://github.com/isrbaral/dotfiles.git "$env:USERPROFILE\dotfiles"
 # Git configuration

@@ -11,26 +11,36 @@ choco install -y 7zip
 choco install -y paint.net
 choco install -y screentogif
 choco install -y zoomit
-winget install -e -h --id WinDirStat.WinDirStat
-winget install -e -h --id Microsoft.BingWallpaper
-winget install -e -h --id Obsidian.Obsidian
-winget install -e -h --id JohnMacFarlane.Pandoc
-winget install -e -h --id Microsoft.Whiteboard -s msstore
+choco install -y wiztree
+choco install -y ditto
+choco install -y greenshot
+choco install -y sysinternals
+choco install -y autohotkey
+
+
+# winget install -e -h --id Microsoft.BingWallpaper
+# winget install -e -h --id Obsidian.Obsidian
+# winget install -e -h --id JohnMacFarlane.Pandoc
+# winget install -e -h --id Microsoft.Whiteboard -s msstore
 winget install -e -h --id Microsoft.PowerToys # settings to sync
 # Already  installed by default
 # winget install -e -h --id Microsoft.Teams
 # winget install -e -h --id Microsoft.Office
-winget install -e -h --id Logitech.Options
-winget install -e -h --id Dell.DisplayManager
+# winget install -e -h --id Logitech.Options
+# winget install -e -h --id Dell.DisplayManager
 
 # ---------------------------------------------- #
 # Dev tools  ----------------------------------- #
 # ---------------------------------------------- #
-winget install -e -h --id AndreasWascher.RepoZ
-winget install -e -h --id CoreyButler.NVMforWindows
-iwr https://get.pnpm.io/install.ps1 -useb | iex
+# winget install -e -h --id AndreasWascher.RepoZ
+# winget install -e -h --id CoreyButler.NVMforWindows
+# iwr https://get.pnpm.io/install.ps1 -useb | iex
 # iwr -useb get.scoop.sh | iex
-
+choco install -y python
+choco install -y githubforwindows
+choco install -y notepadplusplus
+choco install -y putty
+choco install -y mremoteng
 
 # ---------------------------------------------- #
 # Prompt  -------------------------------------- #
@@ -45,6 +55,10 @@ winget install -e -h --id Microsoft.PowerShell
 # Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
 Remove-Item -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force
 New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Target "$env:USERPROFILE\dotfiles\config\powerShell\Microsoft.PowerShell_profile.ps1"
+# Trust PSGallery
+Get-PackageProvider -Name NuGet -ForceBootstrap
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+
 
 # ---------------------------------------------- #
 # NuShell  ---------------------------------- #
@@ -60,8 +74,8 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Roaming\nushell\
 # Windows Terminal ----------------------------- #
 # ---------------------------------------------- #
 # Windows Terminal (stable + preview) install with Cascadia Code PL font
-winget install -e -h --id Microsoft.WindowsTerminal -s msstore
-winget install -e -h --id Microsoft.WindowsTerminalPreview -s msstore
+# winget install -e -h --id Microsoft.WindowsTerminal -s msstore
+# winget install -e -h --id Microsoft.WindowsTerminalPreview -s msstore
 choco install -y cascadiacodepl
 # Windows terminal configuration
 Remove-Item -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Force
@@ -72,16 +86,19 @@ Remove-Item -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerm
 New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json" -Target "$env:USERPROFILE\dotfiles\config\windowsTerminal\settings.json"
 cp "$env:USERPROFILE\dotfiles\config\windowsTerminal\icons\*" "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\RoamingState\"
 
+
+
+
 # ---------------------------------------------- #
 # Azure tools  --------------------------------- #
 # ---------------------------------------------- #
-winget install -e -h --id Microsoft.AzureCLI
-winget install -e -h --id Microsoft.AzureCosmosEmulator
-winget install -e -h --id Microsoft.AzureDataStudio
-winget install -e -h --id Microsoft.azure-iot-explorer
-winget install -e -h --id Microsoft.AzureStorageExplorer
-winget install -e -h --id Pulumi.Pulumi
-winget install -e -h --id Microsoft.AzureFunctionsCoreTools
+# winget install -e -h --id Microsoft.AzureCLI
+# winget install -e -h --id Microsoft.AzureCosmosEmulator
+# winget install -e -h --id Microsoft.AzureDataStudio
+# winget install -e -h --id Microsoft.azure-iot-explorer
+# winget install -e -h --id Microsoft.AzureStorageExplorer
+# winget install -e -h --id Pulumi.Pulumi
+# winget install -e -h --id Microsoft.AzureFunctionsCoreTools
 # Azurite can be installed through vscode extension or as a global npm package
 # pnpm add -g azurite
 
