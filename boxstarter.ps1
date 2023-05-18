@@ -12,6 +12,7 @@ if(Test-Path $env:USERPROFILE\dotfiles) {
         Remove-Item $env:USERPROFILE\dotfiles -Recurse -Force
     }
 }
+Start-Sleep 5
 git clone https://github.com/isrbaral/dotfiles.git "$env:USERPROFILE\dotfiles"
 # Git configuration
 $currentPath = "$env:USERPROFILE\.gitconfig"
