@@ -42,11 +42,6 @@ choco install -y notepadplusplus
 choco install -y putty
 choco install -y mremoteng
 
-# ---------------------------------------------- #
-# Prompt  -------------------------------------- #
-# ---------------------------------------------- #
-pwsh -Command { Install-Module posh-git -Scope CurrentUser -Force}
-winget install -e -h --id JanDeDobbeleer.OhMyPosh
 
 # ---------------------------------------------- #
 # PowerShell  ---------------------------------- #
@@ -58,6 +53,13 @@ New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\Documents\PowerShell\Mic
 # Trust PSGallery
 Get-PackageProvider -Name NuGet -ForceBootstrap
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+RefreshEnv
+
+# ---------------------------------------------- #
+# Prompt  -------------------------------------- #
+# ---------------------------------------------- #
+pwsh -Command { Install-Module posh-git -Scope CurrentUser -Force}
+winget install -e -h --id JanDeDobbeleer.OhMyPosh
 
 
 # ---------------------------------------------- #
