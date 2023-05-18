@@ -32,4 +32,4 @@
 [init]
 	defaultBranch = main
 [safe]
-	directory = C:/Users/izieh/dotfiles
+	directory = %USERPROFILE%/dotfiles
