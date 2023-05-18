@@ -14,12 +14,16 @@ if(Test-Path $env:USERPROFILE\dotfiles) {
 }
 git clone https://github.com/isrbaral/dotfiles.git "$env:USERPROFILE\dotfiles"
 # Git configuration
-Remove-Item -Path "$env:USERPROFILE\.gitconfig" -Force
+$currentPath = "$env:USERPROFILE\.gitconfig"
+if(Test-Path $currentPath) {Remove-Item -Path $currentPath -Force}
+$currentPath = $null
 New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.gitconfig" -Target "$env:USERPROFILE\dotfiles\config\git\.gitconfig"
 # TODO: configure git signature
 
 # Winget configuration
-Remove-Item -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json" -Force
+$currentPath = "$env:USERPROFILE\AppData\Local\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json"
+if(Test-Path $currentPath) {Remove-Item -Path $currentPath -Force}
+$currentPath = $null
 New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\settings.json" -Target "$env:USERPROFILE\dotfiles\config\winget\settings.json"
 
 #--- Enable developer mode on the system ---

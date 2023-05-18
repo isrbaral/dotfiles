@@ -48,7 +48,9 @@ choco install -y mremoteng
 # ---------------------------------------------- #
 winget install -e -h --id Microsoft.PowerShell
 # Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-Remove-Item -Path "$env:OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force
+$currentPath = $env:OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 
+if(Test-Path $currentPath) {Remove-Item -Path $currentPath -Force}
+$currentPath = $null
 New-Item -ItemType SymbolicLink -Path "$env:OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Target "$env:USERPROFILE\dotfiles\config\powerShell\Microsoft.PowerShell_profile.ps1"
 # Trust PSGallery
 Get-PackageProvider -Name NuGet -ForceBootstrap
@@ -80,11 +82,15 @@ oh-my-posh init nu --config "$env:USERPROFILE\dotfiles\config\prompt\.oh-my-posh
 # winget install -e -h --id Microsoft.WindowsTerminalPreview -s msstore
 choco install -y cascadiacodepl
 # Windows terminal configuration
-Remove-Item -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Force
+$currentPath = $env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json
+if(Test-Path $currentPath) {Remove-Item -Path $currentPath -Force}
+$currentPath = $null
 New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" -Target "$env:USERPROFILE\dotfiles\config\windowsTerminal\settings.json"
 cp "$env:USERPROFILE\dotfiles\config\windowsTerminal\icons\*" "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\RoamingState\"
 # Windows terminal preview configuration
-Remove-Item -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json" -Force
+$currentPath = $env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json
+if(Test-Path $currentPath) {Remove-Item -Path $currentPath -Force}
+$currentPath = $null
 New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json" -Target "$env:USERPROFILE\dotfiles\config\windowsTerminal\settings.json"
 cp "$env:USERPROFILE\dotfiles\config\windowsTerminal\icons\*" "$env:USERPROFILE\AppData\Local\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\RoamingState\"
 
