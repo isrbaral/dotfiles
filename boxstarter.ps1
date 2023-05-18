@@ -6,6 +6,7 @@ $Boxstarter.AutoLogin=$false
 # TODO: see how to improve install that by using chezmoi (choco install -y chezmoi)
 choco install -y git --params "/GitOnlyOnPath /WindowsTerminal"
 RefreshEnv
+if(Test-Path "$env:USERPROFILE\dotfiles") {Remove-Item "$env:USERPROFILE\dotfiles"}
 git clone https://github.com/isrbaral/dotfiles.git "$env:USERPROFILE\dotfiles"
 # Git configuration
 Remove-Item -Path "$env:USERPROFILE\.gitconfig" -Force
