@@ -14,7 +14,7 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name MMTaskbarMode -Value 2
 
 #--- Remove Folders from this PC ---
-Invoke-Command {reg import '$env:USERPROFILE\dotfiles\config\regfiles\RemoveAllUserFoldersFromThisPC.reg' *>&1 | Out-Null}
+Invoke-Command {reg import '$env:USERPROFILE\dotfiles\config\regfiles\RemoveAllUserFoldersFromThisPC.reg' | Out-Null}
 
 #--- Show Libraries and move above This PC---
 REG ADD "HKEY_CLASSES_ROOT\CLSID\{031E4825-7B94-4dc3-B131-E946B44C8DD5}" /t REG_DWORD /v SortOrderIndex /d 42 /f
