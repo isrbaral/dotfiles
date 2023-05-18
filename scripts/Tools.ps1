@@ -48,8 +48,8 @@ choco install -y mremoteng
 # ---------------------------------------------- #
 winget install -e -h --id Microsoft.PowerShell
 # Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-Remove-Item -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force
-New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Target "$env:USERPROFILE\dotfiles\config\powerShell\Microsoft.PowerShell_profile.ps1"
+Remove-Item -Path "$env:OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Force
+New-Item -ItemType SymbolicLink -Path "$env:OneDrive\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Target "$env:USERPROFILE\dotfiles\config\powerShell\Microsoft.PowerShell_profile.ps1"
 # Trust PSGallery
 Get-PackageProvider -Name NuGet -ForceBootstrap
 Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
