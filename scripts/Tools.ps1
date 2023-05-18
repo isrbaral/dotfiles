@@ -78,7 +78,7 @@ oh-my-posh init nu --config "$env:USERPROFILE\dotfiles\config\prompt\.oh-my-posh
 # Windows Terminal ----------------------------- #
 # ---------------------------------------------- #
 # Windows Terminal (stable + preview) install with Cascadia Code PL font
-# winget install -e -h --id Microsoft.WindowsTerminal -s msstore
+winget install -e -h --id Microsoft.WindowsTerminal -s msstore
 # winget install -e -h --id Microsoft.WindowsTerminalPreview -s msstore
 choco install -y cascadiacodepl
 # Windows terminal configuration
